@@ -120,11 +120,20 @@
     border: 1px solid #D3D3D3;
     background-color: var(--white-color);
     cursor: default;
-    transform-origin: calc(100%-20px) right ;
-    animation: headerNotifyAnimation ease-in 1;
+    transform-origin: calc(100%-2px) top ;
+    animation: headerNotifyAnimation ease-in .2s;
+    will-change: opacity, transform;
     display: none;
 }
 
+.header__notify::before{
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent var(--white-color) transparent;
+    position: absolute;
+    right: 12px;
+    top: -30px;
+}
 @keyframes headerNotifyAnimation {
     from{
         transform: scale(0);
@@ -163,7 +172,7 @@ h3{
 }
 
 .header__notify-item--viewed{
-    background-color: rgba(45, 208,238, 0.2);
+    background-color: rgba(45, 228, 238, 0.2);
 }
 .header__notify-link{
     width: 100%;
@@ -204,4 +213,29 @@ h3{
     margin: auto;
     font-size: 1.4rem;
     font-weight: 400;
+}
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal__body{
+    width: 300px;
+    height: 300px;
+    background-color: var(--white-color);
+    margin: auto;
+    position: relative;
+    border-radius: 5px;
 }
