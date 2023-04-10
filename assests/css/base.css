@@ -2,7 +2,8 @@
     --primary-color:#2dd0ee;
     --white-color: #fff;
     --black-color: #000;
-    --text-color: #333;    
+    --text-color: #333;
+    --border-color: #dbdbdb;    
 }
 *{
     box-sizing: inherit;
@@ -37,4 +38,38 @@ html{
     to{
         opacity: 1;
     }
+}
+/* Button style */
+.btn{
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.4rem;
+    padding: 0 12px;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn.btn--normal{
+    background-color: rgba(0,0,0,0.2);
+}
+.btn.btn--primary{
+    color:var(--white-color);
+    background-color: var(--primary-color);
+}
+.btn.btn--disable{
+    color: #ccc;
+    cursor: default;
+    background-color: #666;
+}
+.btn.btn--size-s{
+    padding: 0 8px;
+    height: 34px;
+    font-size: 1.2rem;
 }
